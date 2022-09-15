@@ -1,7 +1,7 @@
 function sumOfSeries(N, X) {
       sum=0;
      p=1;
-     if(N <=0 || X <=0)
+     if(N <=0 )
      {
          console.log("-1");
      }
