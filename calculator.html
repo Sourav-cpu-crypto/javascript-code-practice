@@ -1,0 +1,124 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai calculator</title>
+    <style>
+   
+        #first{
+           
+            gap: 10px;
+            padding: 15px;
+            border: 0px solid black;
+            
+        }
+        .calcu{
+            display: grid;
+            background-color: white;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(4,50px);
+            gap: 10px;
+            padding: 15px;
+            margin-top: 10px;
+           
+
+
+        }
+        .calcu>div{
+            border: 0px solid black;
+            font-size: 30px;
+            border-radius: 10px;
+            text-align: center;
+            /* box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; */
+            margin-top: 10px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            font-size: 20px;
+            align-items: center;
+            justify-content: center;
+           
+        }
+
+        
+        #display{
+            height: 60px;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border: 0px solid red;
+            text-align: center;
+            font-size: 30px;
+            
+            
+        }
+       
+        .black{
+            color: white;
+            background-color: black;
+            
+        }
+        #red{
+            color: white;
+            background-color: red;
+        }
+        .calcu>div:hover{
+            background-color: rgb(70, 51, 51);
+        }
+        .black{
+            background-color: black;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+<div id="first">
+    <div id="display"></div>
+    <div class="calcu">
+        
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div class="black">+</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div class="black">-</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div class="black">*</div>
+        <div id="red">C</div>
+        <div>0</div>
+        <div class="black">=</div>
+        <div class="black">/</div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+ let keys= document.querySelectorAll(".calcu>div");
+ let bag=""
+ keys.forEach(function(el){
+    el.addEventListener("click",myCal)
+ })
+    function myCal(event){
+        let targetNumber=event.target.innerText;
+        if(targetNumber=="C"){
+            bag=""; 
+          document.querySelector("#display").innerText="";  
+        }else if(targetNumber=="="){
+            console.log(eval(bag))
+            document.querySelector("#display").innerText=eval(bag)
+        }else{
+            bag=bag+targetNumber;
+            document.querySelector("#display").innerText= bag;
+        }
+       
+       
+        
+
+    }
+</script>
