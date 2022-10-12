@@ -6,11 +6,10 @@ for(let i=0;i<S.length;i++)
      for(let j=i;j<S.length;j++)
   {
        let s="";
-        for(let k=i;k<=j;k++)
-  {
-   s=s+S[k]+"";
+ 
+   s=s+S[j]+"";
 
-  }
+  
 
 if(substr(s))
 {
